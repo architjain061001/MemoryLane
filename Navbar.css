@@ -1,0 +1,362 @@
+:root {
+    --primary: #faf8f5;
+    --secondary: #3E4045;
+    --highlightB: #896B60;
+    --highlightG: #848A67;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+body {
+    background-color: var(--secondary);
+    overflow-x: hidden;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - 40px);
+    display: flex;
+    justify-content: space-between; /* space between logo and menu */
+    align-items: center;
+    padding: 10px 30px;
+    margin: 10px 20px;
+    background-color: transparent;
+    z-index: 1000;
+    border-radius: 40px;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--primary);
+}
+
+.nav-menu {
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    display: inline-flex;
+    margin-right: 10px;
+}
+
+.nav-item{
+    position: relative;
+}
+
+.nav-link {
+    position: relative;
+    color: var(--primary);
+    font-size: 18px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    word-wrap: break-word;
+    opacity: 0.8;
+}
+
+.nav-link:after {
+    content: '';
+    position: max-content;
+    height: 2px;
+    width: 0%;
+    background-color: var(--primary);
+    display: block;
+    transition: all 0.3s;
+    left: 0;
+}
+
+.nav-link:hover {
+    opacity: 1;
+}
+
+.nav-link:hover:after {
+    width: 100%;
+}
+
+.nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 200;
+    color: var(--primary);
+}
+
+.drop-down {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    height: auto;
+    min-width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 40px 10px 40px;
+    transition: all .3s linear;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.nav-item:hover>.drop-down {
+    visibility: visible;
+    opacity: 1;
+}
+
+.nav-link-drop {
+    cursor: default;
+    position: relative;
+    color: var(--primary);
+    font-size: 18px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    word-wrap: break-word;
+    opacity: 0.8;
+}
+
+.nav-link-drop:hover {
+    opacity: 1;
+}
+
+.nav-link-drop:after {
+    content: '';
+    position: max-content;
+    height: 2px;
+    width: 0%;
+    background-color: var(--primary);
+    display: block;
+    transition: all 0.3s;
+    left: 0;
+}
+.nav-link-drop:hover:after {
+    width: 100%;
+}
+
+.drop-down li {
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-sub-link {
+    color: var(--primary);
+    font-size: 18px;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    word-wrap: break-word;
+    opacity: 0.8;
+}
+
+.nav-sub-link:hover {
+    opacity: 1;
+}
+
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1.5rem;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 62px;
+        flex-direction: column;
+        background-color: #FAF8F5;
+        width: 100%;
+        height: calc(100%-62px);
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+        gap: 0px;
+    }
+
+    .nav-menu.active {
+        left: 0;
+        padding: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .nav-item:hover {
+        margin-bottom: 0px;
+    }
+
+    .nav-link {
+        width: 100vw;
+    }
+    
+    .nav-link-drop {
+        width: 100vw;
+    }
+
+
+    .nav-link:hover:after {
+        width: 0%;
+    }
+
+    .nav-item:hover>.drop-down {
+        position: relative; 
+        margin-top: 20px;
+    }
+
+    .drop-down {
+        margin-top: -40px;
+        padding: 0;
+        width: 100vw;
+        background-color: whitesmoke;
+        transition: ease-in 0.1s;
+    }
+
+    .drop-down li {
+        height: max-content;
+        line-height: normal;
+        margin: 20px 0;
+    }
+
+    .nav-link-drop:hover:after {
+        width: 0%;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        height: 30px;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
+
+
+
+/* Styles to apply when the navbar is scrolled */
+
+.navbar.scrolled {
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+/* Update styles for nav links when the navbar is scrolled */
+.navbar.scrolled .nav-link {
+    color: var(--secondary);
+}
+
+.navbar.scrolled .hamburger .bar {
+    background-color: var(--secondary);
+}
+
+
+.navbar.scrolled .nav-link {
+    color: var(--secondary);
+}
+
+.navbar.scrolled .nav-link:after {
+    background-color: var(--secondary);
+}
+
+.navbar.scrolled .nav-logo {
+    color: var(--secondary);
+}
+
+.navbar.scrolled .nav-link-drop {
+    color: var(--secondary);
+}
+
+.navbar.scrolled .nav-sub-link {
+    color: var(--secondary);
+}
+
+.navbar.scrolled .drop-down {
+    background-color: var(--primary);
+}
+
+/* logo loading animations */
+
+.logoani {
+    position: absolute;
+    height: 56px;
+    animation: loading 2s ease infinite;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    transition: opacity 0.75s, visibility 0.75s;
+    z-index: 1000000;
+    overflow: hidden;
+}
+
+.loader--hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after {
+    animation: loading 0.75s ease infinite;
+}
+
+@media screen and (max-width: 768px) { 
+    .logoani {
+        height: 32px;
+    }
+}
+
+@keyframes loading {
+    from {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

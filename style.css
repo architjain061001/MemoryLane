@@ -1,0 +1,126 @@
+:root {
+    --primary: #f3eddf;
+    --secondary: #C39f97;
+    --highlightB: #896B60;
+    --highlightG: #848A67;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: var(--secondary);
+    color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    font-family: 'Poppins', sans-serif;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    text-align: center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./Images/back.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--secondary);
+    background-position: center center; /* this centers the image */
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 48px;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    max-width: 480px;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 3rem;
+    background-color: var(--secondary);
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 2rem;
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn:hover {
+    background-color: var(--primary);
+    color: var(--secondary);
+}
+
+.container {
+  color: var(--secondary);
+  padding: 4rem 2rem;
+  text-align: center;
+  margin: 0 auto 3rem auto;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.container p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 1.1rem;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: var(--primary);
+  max-width: 80%;
+}
+
+footer {
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.8rem;
+    background-color: var(--primary);
+    color: var(--secondary);
+    user-select: none;
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 1rem 2rem;
+        margin: 1rem 0px;
+    }
+
+    .container p {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+}
