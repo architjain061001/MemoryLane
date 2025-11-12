@@ -1,0 +1,135 @@
+:root {
+    --primary: #edeae4;
+    --secondary: #232a2f;
+    --highlight: #49111c;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: var(--primary);
+    color: var(--primary);
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    font-family: 'Poppins', sans-serif;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    text-align: center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./Images/lettersback.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--secondary);
+    background-position: center center;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 48px;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    max-width: 480px;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 3rem;
+    background-color: var(--highlight);
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 2rem;
+    transition: background-color 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn:hover {
+    background-color: var(--primary);
+    color: var(--highlight);
+}
+
+.container {
+  color: var(--secondary);
+  padding: 10rem 2rem;
+  text-align: center;
+}
+
+.dark {
+    color: var(--primary); 
+    background-color: var(--secondary);
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--highlight);
+}
+
+.dark h2 {
+    color: var(--primary) !important;
+}
+
+.container p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: var(--secondary);
+  max-width: 80%;
+}
+
+.dark p {
+    color: var(--primary) !important;
+}
+
+footer {
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.8rem;
+    background-color: var(--secondary);
+    color: var(--primary);
+    user-select: none;
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 4rem 2rem;
+    }
+
+    .container p {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+}

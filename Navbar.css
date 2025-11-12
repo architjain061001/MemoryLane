@@ -1,8 +1,7 @@
 :root {
-    --primary: #faf8f5;
-    --secondary: #3E4045;
-    --highlightB: #896B60;
-    --highlightG: #848A67;
+    --primary: #edeae4;
+    --secondary: #232a2f;
+    --highlight: #49111c;
 }
 
 * {
@@ -38,6 +37,10 @@ a {
     background-color: transparent;
     z-index: 1000;
     border-radius: 40px;
+}
+
+.nav-close-btn {
+    display: none;
 }
 
 .hamburger {
@@ -178,7 +181,7 @@ a {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: flex-start;
+        align-items: center;
         padding: 1rem 1.5rem;
     }
 
@@ -201,10 +204,12 @@ a {
     }
 
     .nav-close-btn {
+        display: inline;
         position: absolute;
-        top: 1rem;
-        right: 1rem;
-        font-size: 2rem;
+        top: 0rem;
+        right: 2rem;
+        font-size: 4rem;
+        align-self: flex-start;
         cursor: pointer;
         color: var(--secondary);
         background: transparent;

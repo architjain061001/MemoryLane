@@ -1,14 +1,13 @@
 :root {
-    --primary: #f3eddf;
-    --secondary: #C39f97;
-    --highlightB: #896B60;
-    --highlightG: #848A67;
+    --primary: #edeae4;
+    --secondary: #232a2f;
+    --highlight: #49111c;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background-color: var(--secondary);
+    background-color: var(--primary);
     color: var(--primary);
     display: flex;
     flex-direction: column;
@@ -53,7 +52,7 @@ p {
 .btn {
     display: inline-block;
     padding: 0.8rem 3rem;
-    background-color: var(--secondary);
+    background-color: var(--highlight);
     color: var(--primary);
     font-weight: 600;
     text-decoration: none;
@@ -64,7 +63,7 @@ p {
 
 .btn:hover {
     background-color: var(--primary);
-    color: var(--secondary);
+    color: var(--highlight);
 }
 
 .container {
@@ -76,19 +75,19 @@ p {
 
 h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 2.5rem;
+  font-size: 48px;
   font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--primary);
+  margin-bottom: 2rem;
+  color: var(--highlight);
 }
 
 .container p {
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
-  font-size: 1.1rem;
+  font-size: 18px;
   margin: 0 auto;
   line-height: 1.6;
-  color: var(--primary);
+  color: var(--secondary);
   max-width: 80%;
 }
 
@@ -96,8 +95,8 @@ footer {
     padding: 1rem 0;
     text-align: center;
     font-size: 0.8rem;
-    background-color: var(--primary);
-    color: var(--secondary);
+    background-color: var(--secondary);
+    color: var(--primary);
     user-select: none;
 }
 
@@ -115,8 +114,8 @@ footer {
     }
 
     .container {
-        padding: 1rem 2rem;
-        margin: 1rem 0px;
+        padding: 2rem 2rem;
+        margin: 2rem 0px;
     }
 
     .container p {
