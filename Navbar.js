@@ -1,35 +1,34 @@
-//     --primary: #FAF8F5;
-//     --secondary: #3E4045;
-//     --highlightB: #896B60;
-//     --highlightG: #848A67;
-
 document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.querySelector(".navbar");
-    const navMenu = document.querySelector(".nav-menu");
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelectorAll(".nav-link");
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const navCloseBtn = document.querySelector('.nav-close-btn');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-    // Function to handle scrolling
+    // Function to update navbar scrolled state on page scroll
     function handleScroll() {
         const scrollPosition = window.scrollY;
-        const topThreshold = 50; // Change this value as needed
+        const topThreshold = 50;
 
         if (scrollPosition > topThreshold) {
             navbar.classList.add("scrolled");
         } else {
-            navbar.classList.remove("scrolled");
+            // Only remove "scrolled" if menu is not active
+            if (!navMenu.classList.contains("active")) {
+                navbar.classList.remove("scrolled");
+            }
         }
     }
 
-    // Event listener for scroll
+    // Scroll event to trigger navbar style update
     window.addEventListener("scroll", handleScroll);
 
-    // Rest of your menu toggle logic
-    hamburger.addEventListener("click", mobileMenu);
-
+    // Toggle mobile menu open/close
     function mobileMenu() {
         hamburger.classList.toggle("active");
         navMenu.classList.toggle("active");
+
+        // Always keep navbar scrolled if menu is open
         if (navMenu.classList.contains("active")) {
             navbar.classList.add("scrolled");
         } else if (window.scrollY < 50) {
@@ -37,11 +36,26 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    navLinks.forEach(n => n.addEventListener("click", closeMenu));
+    hamburger.addEventListener("click", mobileMenu);
 
-    function closeMenu() {
+    // Close mobile menu when clicking close button (if exists)
+    if (navCloseBtn) {
+        navCloseBtn.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+            // Remove scrolled only if scroll position is near top
+            if (window.scrollY < 50) {
+                navbar.classList.remove("scrolled");
+            }
+        });
+    }
+
+    // Close mobile menu when nav links clicked
+    navLinks.forEach(n => n.addEventListener("click", () => {
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
-        navbar.classList.remove("scrolled");
-    }
+        if (window.scrollY < 50) {
+            navbar.classList.remove("scrolled");
+        }
+    }));
 });
